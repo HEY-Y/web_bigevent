@@ -3,7 +3,7 @@ $.ajaxPrefilter(function (options) {
   options.url = "http://www.liulongbin.top:3007" + options.url;
   if (options.url.indexOf("/my/") !== -1) {
     //统一为有权限的接口 设置headers请求头
-    options.header = { Authorization: localStorage.getItem("token") || "" };
+    options.headers = { Authorization: localStorage.getItem("token") || "" };
   }
 
   //全局统一挂载complete回调函数
